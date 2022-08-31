@@ -199,7 +199,9 @@ const AdminGroupPage = () => {
                     onClick={() => addToGroup(user.DN)}
                   >
                     <Text fontWeight="bold">{user.Cn}</Text>
-                    <Text>{user.UidNumber}</Text>
+                    <Text style={{ fontVariantNumeric: "tabular-nums" }}>
+                      {user.UidNumber}
+                    </Text>
                   </Flex>
                 ))}
           </Box>
@@ -222,7 +224,9 @@ const AdminGroupPage = () => {
                     onClick={() => removeFromGroup(user.DN)}
                   >
                     <Text fontWeight="bold">{user.Cn}</Text>
-                    <Text>{user.UidNumber}</Text>
+                    <Text style={{ fontVariantNumeric: "tabular-nums" }}>
+                      {user.UidNumber}
+                    </Text>
                   </Flex>
                 ))}
           </Box>
