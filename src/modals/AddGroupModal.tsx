@@ -30,6 +30,7 @@ const AddGroupModal = ({ isOpen, onClose }: AddUserModalProps) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<FormValues>();
 
@@ -47,6 +48,7 @@ const AddGroupModal = ({ isOpen, onClose }: AddUserModalProps) => {
       );
 
       queryClient.invalidateQueries(["groups"]);
+      reset();
       onClose();
     } catch (e) {
       alert("그룹 추가에 실패하였습니다");
