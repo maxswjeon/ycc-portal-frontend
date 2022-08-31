@@ -50,6 +50,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["framer-motion", "virtual:dc23d14542bc9548d3d620ff2a8ddb91f7fe2e3991c9a4c42665a3e6f567ab6550f718114df6b82543bee64cb12f76ed93874a748cdd2466b26ab0e771f7f518#npm:7.2.1"],\
             ["next", "virtual:dc23d14542bc9548d3d620ff2a8ddb91f7fe2e3991c9a4c42665a3e6f567ab6550f718114df6b82543bee64cb12f76ed93874a748cdd2466b26ab0e771f7f518#npm:12.2.5"],\
             ["next-optimized-images", "npm:2.6.2"],\
+            ["next-use-posthog", "virtual:dc23d14542bc9548d3d620ff2a8ddb91f7fe2e3991c9a4c42665a3e6f567ab6550f718114df6b82543bee64cb12f76ed93874a748cdd2466b26ab0e771f7f518#npm:1.16.0"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:dc23d14542bc9548d3d620ff2a8ddb91f7fe2e3991c9a4c42665a3e6f567ab6550f718114df6b82543bee64cb12f76ed93874a748cdd2466b26ab0e771f7f518#npm:18.2.0"],\
             ["react-hook-form", "virtual:dc23d14542bc9548d3d620ff2a8ddb91f7fe2e3991c9a4c42665a3e6f567ab6550f718114df6b82543bee64cb12f76ed93874a748cdd2466b26ab0e771f7f518#npm:7.34.2"],\
@@ -2639,6 +2640,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@sentry/types", [\
+        ["npm:6.19.7", {\
+          "packageLocation": "./.yarn/cache/@sentry-types-npm-6.19.7-f75535a9f4-f46ef74a33.zip/node_modules/@sentry/types/",\
+          "packageDependencies": [\
+            ["@sentry/types", "npm:6.19.7"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@swc/helpers", [\
         ["npm:0.4.3", {\
           "packageLocation": "./.yarn/cache/@swc-helpers-npm-0.4.3-5d4bea11d2-5c2f173e95.zip/node_modules/@swc/helpers/",\
@@ -4362,6 +4372,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["fflate", [\
+        ["npm:0.4.8", {\
+          "packageLocation": "./.yarn/cache/fflate-npm-0.4.8-4dd4e91e29-29d8cbe44d.zip/node_modules/fflate/",\
+          "packageDependencies": [\
+            ["fflate", "npm:0.4.8"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["figures", [\
         ["npm:3.2.0", {\
           "packageLocation": "./.yarn/cache/figures-npm-3.2.0-85d357e955-85a6ad29e9.zip/node_modules/figures/",\
@@ -5482,6 +5501,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["framer-motion", "virtual:dc23d14542bc9548d3d620ff2a8ddb91f7fe2e3991c9a4c42665a3e6f567ab6550f718114df6b82543bee64cb12f76ed93874a748cdd2466b26ab0e771f7f518#npm:7.2.1"],\
             ["next", "virtual:dc23d14542bc9548d3d620ff2a8ddb91f7fe2e3991c9a4c42665a3e6f567ab6550f718114df6b82543bee64cb12f76ed93874a748cdd2466b26ab0e771f7f518#npm:12.2.5"],\
             ["next-optimized-images", "npm:2.6.2"],\
+            ["next-use-posthog", "virtual:dc23d14542bc9548d3d620ff2a8ddb91f7fe2e3991c9a4c42665a3e6f567ab6550f718114df6b82543bee64cb12f76ed93874a748cdd2466b26ab0e771f7f518#npm:1.16.0"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:dc23d14542bc9548d3d620ff2a8ddb91f7fe2e3991c9a4c42665a3e6f567ab6550f718114df6b82543bee64cb12f76ed93874a748cdd2466b26ab0e771f7f518#npm:18.2.0"],\
             ["react-hook-form", "virtual:dc23d14542bc9548d3d620ff2a8ddb91f7fe2e3991c9a4c42665a3e6f567ab6550f718114df6b82543bee64cb12f76ed93874a748cdd2466b26ab0e771f7f518#npm:7.34.2"],\
@@ -5831,6 +5851,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["next-use-posthog", [\
+        ["npm:1.16.0", {\
+          "packageLocation": "./.yarn/cache/next-use-posthog-npm-1.16.0-9bab1bcef7-842d5bdddf.zip/node_modules/next-use-posthog/",\
+          "packageDependencies": [\
+            ["next-use-posthog", "npm:1.16.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:dc23d14542bc9548d3d620ff2a8ddb91f7fe2e3991c9a4c42665a3e6f567ab6550f718114df6b82543bee64cb12f76ed93874a748cdd2466b26ab0e771f7f518#npm:1.16.0", {\
+          "packageLocation": "./.yarn/__virtual__/next-use-posthog-virtual-d4deff290a/0/cache/next-use-posthog-npm-1.16.0-9bab1bcef7-842d5bdddf.zip/node_modules/next-use-posthog/",\
+          "packageDependencies": [\
+            ["next-use-posthog", "virtual:dc23d14542bc9548d3d620ff2a8ddb91f7fe2e3991c9a4c42665a3e6f567ab6550f718114df6b82543bee64cb12f76ed93874a748cdd2466b26ab0e771f7f518#npm:1.16.0"],\
+            ["@types/react", "npm:18.0.17"],\
+            ["posthog-js", "npm:1.16.0"],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["object-assign", [\
         ["npm:4.1.1", {\
           "packageLocation": "./.yarn/cache/object-assign-npm-4.1.1-1004ad6dec-fcc6e4ea8c.zip/node_modules/object-assign/",\
@@ -6162,6 +6205,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["nanoid", "npm:3.3.4"],\
             ["picocolors", "npm:1.0.0"],\
             ["source-map-js", "npm:1.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["posthog-js", [\
+        ["npm:1.16.0", {\
+          "packageLocation": "./.yarn/cache/posthog-js-npm-1.16.0-b413cd2be8-3ecf6f86e7.zip/node_modules/posthog-js/",\
+          "packageDependencies": [\
+            ["posthog-js", "npm:1.16.0"],\
+            ["@sentry/types", "npm:6.19.7"],\
+            ["fflate", "npm:0.4.8"],\
+            ["rrweb-snapshot", "npm:1.1.14"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -6562,6 +6617,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["rimraf", "npm:3.0.2"],\
             ["glob", "npm:7.2.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["rrweb-snapshot", [\
+        ["npm:1.1.14", {\
+          "packageLocation": "./.yarn/cache/rrweb-snapshot-npm-1.1.14-4c8ef9c1da-2e9a30233b.zip/node_modules/rrweb-snapshot/",\
+          "packageDependencies": [\
+            ["rrweb-snapshot", "npm:1.1.14"]\
           ],\
           "linkType": "HARD"\
         }]\

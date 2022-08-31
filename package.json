@@ -21,6 +21,7 @@
     "framer-motion": "^7.2.1",
     "next": "12.2.5",
     "next-optimized-images": "^2.6.2",
+    "next-use-posthog": "^1.16.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.34.2"
