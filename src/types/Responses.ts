@@ -1,4 +1,5 @@
-import { User } from "./User";
+import { Group } from "types/Group";
+import { User } from "types/User";
 
 type ResponseBase = {
   result: boolean;
@@ -27,4 +28,7 @@ export type UserListResponse = ResponseBase & {
 };
 export type UserResponse = ResponseBase & {
   user: User;
+};
+export type GroupListResponse = ResponseBase & {
+  groups: Group[];
 };

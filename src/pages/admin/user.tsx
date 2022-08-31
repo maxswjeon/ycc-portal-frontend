@@ -53,12 +53,6 @@ const AdminUserPage: NextPage = () => {
     onClose: onFileDialogClose,
   } = useDisclosure();
 
-  const {
-    isOpen: isGoogleDialogOpen,
-    onOpen: onGoogleDialogOpen,
-    onClose: onGoogleDialogClose,
-  } = useDisclosure();
-
   const [userDN, setUserDN] = useState<string>("");
 
   if (!isAuth || !isAdmin) {
