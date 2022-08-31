@@ -26,9 +26,28 @@ const ListItem = ({ title, url }: { title: string; url: string }) => {
 const ListMenuSecion = () => {
   const isAdmin = useAdmin();
 
-  if (isAdmin === null) {
-    return null;
-  }
+  const AdminLists = (
+    <>
+      {" "}
+      <Heading
+        as="h2"
+        width="100%"
+        height="48px"
+        lineHeight="48px"
+        px="5"
+        fontSize="xl"
+        bgColor="black"
+        color="white"
+      >
+        임원진
+      </Heading>
+      <Flex as="ul" flexDirection="column" listStyleType="none">
+        <ListItem title="회원 관리" url="/admin/user" />
+        <ListItem title="그룹 관리" url="/admin/group" />
+        <ListItem title="연세 VPN" url="https://ysvpn.yonsei.ac.kr" />
+      </Flex>
+    </>
+  );
 
   return (
     <Section display={["block", "block", "none"]}>
@@ -67,27 +86,7 @@ const ListMenuSecion = () => {
         <ListItem title="스터디" url="https://study.ycc.club" />
       </Flex>
 
-      <Heading
-        as="h2"
-        width="100%"
-        height="48px"
-        lineHeight="48px"
-        px="5"
-        fontSize="xl"
-        bgColor="black"
-        color="white"
-        display={isAdmin ? "block" : "none"}
-      >
-        임원진
-      </Heading>
-      <Flex
-        as="ul"
-        flexDirection="column"
-        listStyleType="none"
-        display={isAdmin ? "block" : "none"}
-      >
-        <ListItem title="회원 관리" url="/admin/user" />
-      </Flex>
+      {!!isAdmin && AdminLists}
     </Section>
   );
 };

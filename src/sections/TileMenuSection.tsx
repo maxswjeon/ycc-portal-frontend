@@ -9,6 +9,8 @@ import {
   faGraduationCap,
   faScrewdriverWrench,
   faUsers,
+  faUsersRectangle,
+  faWifi,
 } from "@fortawesome/pro-solid-svg-icons";
 import Section from "components/global/Section";
 import Tile from "components/Tile";
@@ -20,9 +22,48 @@ const TileMenuSection = () => {
 
   const router = useRouter();
 
-  if (isAdmin === null) {
-    return null;
-  }
+  const AdminTiles = (
+    <Flex
+      mt="3"
+      gap="10px"
+      justifyContent="start"
+      flexWrap="wrap"
+      display={isAdmin ? "flex" : "none"}
+    >
+      <Tile
+        icon={faScrewdriverWrench}
+        title="임원진"
+        size="100px"
+        color="white"
+        borderColor="black"
+        textColor="black"
+      />
+      <Tile
+        icon={faUsers}
+        title="회원 관리"
+        size="100px"
+        color="black"
+        textColor="white"
+        onClick={() => router.push("/admin/user")}
+      />
+      <Tile
+        icon={faUsersRectangle}
+        title="그룹 관리"
+        size="100px"
+        color="black"
+        textColor="white"
+        onClick={() => router.push("/admin/group")}
+      />
+      <Tile
+        icon={faWifi}
+        title="연세 VPN"
+        size="100px"
+        color="black"
+        textColor="white"
+        onClick={() => router.push("https://ysvpn.yonsei.ac.kr")}
+      />
+    </Flex>
+  );
 
   return (
     <Section display={["none", "none", "block"]}>
@@ -86,30 +127,7 @@ const TileMenuSection = () => {
           onClick={() => router.push("https://study.ycc.club")}
         />
       </Flex>
-      <Flex
-        mt="3"
-        gap="10px"
-        justifyContent="start"
-        flexWrap="wrap"
-        display={isAdmin ? "flex" : "none"}
-      >
-        <Tile
-          icon={faScrewdriverWrench}
-          title="임원진"
-          size="100px"
-          color="white"
-          borderColor="black"
-          textColor="black"
-        />
-        <Tile
-          icon={faUsers}
-          title="회원 관리"
-          size="100px"
-          color="black"
-          textColor="white"
-          onClick={() => router.push("/admin/user")}
-        />
-      </Flex>
+      {!!isAdmin && AdminTiles}
     </Section>
   );
 };

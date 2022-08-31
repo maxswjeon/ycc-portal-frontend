@@ -3,7 +3,7 @@ import axios, { AxiosError } from "axios";
 import CenterPage from "components/global/CenterPage";
 import Page from "components/global/Page";
 import Section from "components/global/Section";
-import useAuthState from "hooks/queries/useAuthState";
+import useAuth from "hooks/queries/useAuth";
 import useUserInfo from "hooks/queries/useUserInfo";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
@@ -11,94 +11,60 @@ import ListMenuSecion from "sections/ListMenuSection";
 import TileMenuSection from "sections/TileMenuSection";
 
 const HomePage: NextPage = () => {
-  const {
-    data: sessionData,
-    isLoading: sessionIsLoading,
-    isError: sessionIsError,
-    error: sessionError,
-  } = useAuthState();
-
-  const {
-    data: userData,
-    isLoading: userIsLoading,
-    isError: userIsError,
-    error: userError,
-  } = useUserInfo();
+  const isAuth = useAuth();
+  const { data, isLoading, isError, error } = useUserInfo();
 
   const router = useRouter();
 
-  if (sessionIsLoading || userIsLoading) {
+  if (isAuth === null) {
     return (
       <CenterPage>
-        <Heading as="h1" fontSize="xl" textAlign="center">
-          Loading...
+        <Heading as="h1" textAlign="center">
+          로딩중입니다...
         </Heading>
       </CenterPage>
     );
   }
 
-  if (sessionIsError) {
-    return (
-      <CenterPage>
-        <Heading as="h1" fontSize="xl" textAlign="center">
-          Error occured while checking session
-        </Heading>
-        <Text fontSize="xs" textAlign="center">
-          {axios.isAxiosError(sessionError)
-            ? (sessionError as AxiosError).message
-            : "Unknown error occured"}
-        </Text>
-      </CenterPage>
-    );
-  }
-
-  if (!sessionData) {
-    return (
-      <CenterPage>
-        <Heading as="h1" fontSize="xl" textAlign="center">
-          Unknown error occured while checking session
-        </Heading>
-        <Text size="xs" textAlign="center">
-          Query state is success, but there is no data in response
-        </Text>
-      </CenterPage>
-    );
-  }
-
-  if (!sessionData.status) {
+  if (!isAuth) {
     router.push("/login");
-    return null;
   }
 
-  if (userIsError) {
+  if (isLoading) {
     return (
       <CenterPage>
-        <Heading as="h1" fontSize="xl" textAlign="center">
-          Error occured while getting user info
+        <Heading as="h1" textAlign="center">
+          로딩중입니다...
         </Heading>
-        <Text fontSize="xs" textAlign="center">
-          {axios.isAxiosError(userError)
-            ? (userError as AxiosError).message
-            : "Unknown error occured"}
-        </Text>
       </CenterPage>
     );
   }
 
-  if (!userData) {
+  if (isError || !data) {
+    if (!axios.isAxiosError(error)) {
+      return (
+        <CenterPage>
+          <Heading as="h1" textAlign="center">
+            데이터를 불러오는 중 오류가 발생했습니다
+          </Heading>
+          <Text textAlign="center">알 수 없는 오류가 발생했습니다</Text>
+        </CenterPage>
+      );
+    }
+
+    const axiosError = error as AxiosError;
+
     return (
       <CenterPage>
-        <Heading as="h1" fontSize="xl" textAlign="center">
-          Unknown error occured while getting user info
+        <Heading as="h1" textAlign="center">
+          데이터를 불러오는 중 오류가 발생했습니다
         </Heading>
-        <Text size="xs" textAlign="center">
-          Query state is success, but there is no data in response
-        </Text>
+        <Text textAlign="center">{axiosError.message}</Text>
       </CenterPage>
     );
   }
 
-  const { name } = userData;
+  const { name } = data.data;
 
   return (
     <Page>

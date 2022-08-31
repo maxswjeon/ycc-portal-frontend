@@ -1,3 +1,5 @@
+import { User } from "./User";
+
 type ResponseBase = {
   result: boolean;
   error?: string;
@@ -12,6 +14,17 @@ export type LoginResponse = ResponseBase & {
   user: string;
 };
 export type UserInfoResponse = ResponseBase & {
-  name: string;
-  groups: string[];
+  data: {
+    email: string;
+    name: string;
+    username: string;
+    verified: boolean;
+    groups: string[];
+  };
+};
+export type UserListResponse = ResponseBase & {
+  data: User[];
+};
+export type UserResponse = ResponseBase & {
+  user: User;
 };
