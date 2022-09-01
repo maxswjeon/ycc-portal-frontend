@@ -1,8 +1,10 @@
-import { Flex, Link, Spacer } from "@chakra-ui/react";
+import { Flex, Spacer } from "@chakra-ui/react";
+import { faRightFromBracket, faUser } from "@fortawesome/pro-solid-svg-icons";
 import Logo from "assets/Logo.png";
 import axios from "axios";
 import Image from "components/global/Image";
 import { useRouter } from "next/router";
+import Icon from "./Icon";
 
 const Navigation = () => {
   const router = useRouter();
@@ -39,7 +41,8 @@ const Navigation = () => {
         onClick={() => router.push("/")}
       />
       <Spacer />
-      <Link onClick={logout}>로그아웃</Link>
+      <Icon cursor="pointer" icon={faUser} onClick={() => router.push("/me")} />
+      <Icon cursor="pointer" icon={faRightFromBracket} onClick={logout} />
     </Flex>
   );
 };
