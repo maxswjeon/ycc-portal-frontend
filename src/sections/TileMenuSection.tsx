@@ -60,7 +60,7 @@ const TileMenuSection = () => {
         size="100px"
         color="black"
         textColor="white"
-        onClick={() => router.push("https://ysvpn.yonsei.ac.kr")}
+        onClick={() => window.open("https://ysvpn.yonsei.ac.kr", "_blank")}
       />
     </Flex>
   );
@@ -82,7 +82,7 @@ const TileMenuSection = () => {
           size="100px"
           color="#0037ff"
           textColor="#E5E5F5"
-          onClick={() => router.push("https://mail.ycc.club")}
+          onClick={() => window.open("https://mail.ycc.club", "_blank")}
         />
         <Tile
           icon={faGitlab}
@@ -90,7 +90,7 @@ const TileMenuSection = () => {
           size="100px"
           color="#0037ff"
           textColor="#E5E5F5"
-          onClick={() => router.push("https://git.ycc.club")}
+          onClick={() => window.open("https://git.ycc.club", "_blank")}
         />
         <Tile
           icon={faCloud}
@@ -98,7 +98,7 @@ const TileMenuSection = () => {
           size="100px"
           color="#0037ff"
           textColor="#E5E5F5"
-          onClick={() => router.push("https://cloud.ycc.club")}
+          onClick={() => window.open("https://cloud.ycc.club", "_blank")}
         />
         <Tile
           icon={faBookOpenCover}
@@ -106,7 +106,7 @@ const TileMenuSection = () => {
           size="100px"
           color="#0037ff"
           textColor="#E5E5F5"
-          onClick={() => router.push("https://wiki.ycc.club")}
+          onClick={() => window.open("https://wiki.ycc.club", "_blank")}
         />
       </Flex>
       <Flex mt="3" gap="10px" justifyContent="start" flexWrap="wrap">
@@ -124,7 +124,7 @@ const TileMenuSection = () => {
           size="100px"
           color="#6c29ff"
           textColor="#E5E5F5"
-          onClick={() => router.push("https://study.ycc.club")}
+          onClick={() => window.open("https://study.ycc.club", "_blank")}
         />
       </Flex>
       {!!isAdmin && AdminTiles}

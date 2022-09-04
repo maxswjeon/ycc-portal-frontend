@@ -6,7 +6,7 @@ import NextLink from "next/link";
 const ListItem = ({ title, url }: { title: string; url: string }) => {
   return (
     <NextLink href={url} passHref>
-      <Link>
+      <Link target="_blank">
         <Text
           as="li"
           width="100%"
